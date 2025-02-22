@@ -66,5 +66,13 @@ class Company
             this.employees.forEach(employee => {console.log(employee.getDetails())});
         }
     }
+    const company = new Company("TechCorp");
+    company.addEmployee(emp1);
+    company.addEmployee(mgr1);
+    company.listEmployees();
+    // Expected output:
+    // "Employee: Alice Johnson, ID: 101, Department: Sales, Salary: $5000"
+    // "Manager: John Smith, ID: 201, Department: IT, Salary: $8000, Team Size: 5"
+
 
     
