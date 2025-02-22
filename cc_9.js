@@ -16,12 +16,13 @@ class Employee //creating a class with multiple properties
         { 
             let annualSalary = this.salary * 12; 
         }
+    }
         const emp1 = new Employee("Alice Johnson", 101, "Sales", 5000);
         console.log(emp1.getDetails()); 
         // Expected output: "Employee: Alice Johnson, ID: 101, Department: Sales, Salary: $5000"
         console.log(emp1.calculateAnnualSalary()); 
         // Expected output: 60000
-    }
+    
 
 //Task 2 : create a manager class with inheritance
 class Manager extends Employee //new class but it extends the employee class from previous task
@@ -73,6 +74,11 @@ class Company //created a new class
         { //method will return the sum of employees and managers salaries 
             return this.employees.reduce((total, employee) => total + employee.calculateAnnualSalary(), 0); 
         }
+        promoteToManager (employee, teamSize) //added a new method in the Company class for task 5
+        { //will convert the employees to a manager 
+            const index = this.employees.indexOf(employee); 
+            this.employees[index] = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize); 
+        }
     }
     const company = new Company("TechCorp");
     company.addEmployee(emp1);
@@ -86,6 +92,10 @@ class Company //created a new class
 console.log(company.calculateTotalPayroll()); 
 // Expected output: 165600 (assuming emp1 and mgr1 salaries)
 
+//Task 5: implementing promotions 
+company.promoteToManager(emp1, 3);
+company.listEmployees();
+// Expected output: "Manager: Alice Johnson, ID: 101, Department: Sales, Salary: $5000, Team Size: 3" 
 
 
 
