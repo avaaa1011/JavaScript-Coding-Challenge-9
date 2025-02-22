@@ -21,5 +21,32 @@ class Employee //creating a class with multiple properties
         // Expected output: "Employee: Alice Johnson, ID: 101, Department: Sales, Salary: $5000"
         console.log(emp1.calculateAnnualSalary()); 
         // Expected output: 60000
-      
     }
+
+//Task 2 : create a manager class with inheritance
+class Manager extends Employee //new class but it extends the employee class from previous task
+    {
+        constructor(name, id, department, salary, teamSize) 
+        //inherits same properties from the Employee class. 
+        //also added a new property 'teamSize'
+        {
+            super(name, id, department, salary);
+            this.teamSize = teamSize;
+        }
+        getDetails() //overiding and updating the previous getDetails to now include teamSize
+        {
+            return(`Manager Name: ${this.name}\n Employee ID: ${this.id}\n Department: ${this.department}\n Salary: $${this.salary}\n Team Size: ${this.teamSize}\n`);
+        }
+        calculateBonus() //adding a new method that will return 10% of a manager's annual salary
+        {
+            const bonus = 0.1
+            const startingSalary = this.salary * 12;
+            return bonus * startingSalary;
+        }
+        const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
+        console.log(mgr1.getDetails());
+        // Expected output: "Manager: John Smith, ID: 201, Department: IT, Salary: $8000, Team Size: 5"
+        console.log(mgr1.calculateBonus()); 
+        // Expected output: 9600
+    }
+    
