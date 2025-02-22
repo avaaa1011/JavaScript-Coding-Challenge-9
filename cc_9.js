@@ -50,18 +50,18 @@ class Manager extends Employee //new class but it extends the employee class fro
         // Expected output: 9600
     
 //Task 3: Creating a Company Class
-class Company
+class Company //created a new class
     {
         constructor(name, employees)
         {
             this.name = name;
             this.employees = [];
         };
-        addEmployee(employee)
+        addEmployee(employee) //method that adds employees 
         {
             this.employees.push(employee);
         }
-        listEmployees()
+        listEmployees() //method that logs all employee's information 
         {
             this.employees.forEach(employee => {console.log(employee.getDetails())});
         }
@@ -73,6 +73,7 @@ class Company
     // Expected output:
     // "Employee: Alice Johnson, ID: 101, Department: Sales, Salary: $5000"
     // "Manager: John Smith, ID: 201, Department: IT, Salary: $8000, Team Size: 5"
+
 
 
     
