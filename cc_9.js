@@ -48,5 +48,23 @@ class Manager extends Employee //new class but it extends the employee class fro
         // Expected output: "Manager: John Smith, ID: 201, Department: IT, Salary: $8000, Team Size: 5"
         console.log(mgr1.calculateBonus()); 
         // Expected output: 9600
+    
+//Task 3: Creating a Company Class
+class Company
+    {
+        constructor(name, employees)
+        {
+            this.name = name;
+            this.employees = [];
+        };
+        addEmployee(employee)
+        {
+            this.employees.push(employee);
+        }
+        listEmployees()
+        {
+            this.employees.forEach(employee => {console.log(employee.getDetails())});
+        }
     }
+
     
